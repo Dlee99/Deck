@@ -30,7 +30,7 @@ public class Deck {
             }
         }
         for(int i = 0; i < extra.length; i++){
-            cards.add(new Card(extra[i], "None"));
+            cards.add(new Card(extra[i], "Blank"));
         }
         size = ranks.length * suits.length + extra.length;
     }

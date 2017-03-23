@@ -27,7 +27,6 @@ public class Card {
         rank = cardRank;
     }
 
-
     /**
      * Accesses this <code>Card's</code> suit.
      * @return this <code>Card's</code> suit.
@@ -73,6 +72,11 @@ public class Card {
      */
     @Override
     public String toString() {
-        return rank() + " of " + suit();
+        if(suit.equals("Blank")){
+            return rank();
+        }
+        else{
+            return rank() + " of " + suit();
+        }
     }
 }
