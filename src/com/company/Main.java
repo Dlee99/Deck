@@ -99,6 +99,7 @@ public class Main {
             extras[i] = extra.get(i);
         }
         Deck deck = new Deck(ranks, suits, extras);
+        deck.shuffle();
         System.out.println(deck.toString());
 
     }
