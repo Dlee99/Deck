@@ -35,6 +35,7 @@ public class Main {
         System.out.println("What is the lowest and highest non-face card you want in the deck?");
         System.out.print("Low:\t");
         int low = sc2.nextInt();
+        System.out.println();
         System.out.print("High:\t");
         int high = sc2.nextInt();
         System.out.println("Would you like the standard face cards?  (Ace, Jack, King, and Queen.  \"Y\" or \"N\"");
