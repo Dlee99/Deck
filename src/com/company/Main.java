@@ -36,8 +36,16 @@ public class Main {
         System.out.print("Low:\t");
         int low = sc2.nextInt();
         System.out.println();
+        if(low < 2){
+            low = 2;
+            System.out.println("Too low, sorry.  Set to 2.");
+        }
         System.out.print("High:\t");
         int high = sc2.nextInt();
+        if(high > 10){
+            high = 10;
+            System.out.println("Too high, sorry.  Set to 10.");
+        }
         System.out.println("Would you like the standard face cards?  (Ace, Jack, King, and Queen.  \"Y\" or \"N\"");
         boolean f = true;
         while(true){

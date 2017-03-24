@@ -22,14 +22,14 @@ public class Deck {
      */
     private int size;
 
-    public Deck(String[] ranks, String[] suits, String[] extra){
+    public Deck(String[] ranks, String[] suits, String[] extra) {
         cards = new ArrayList<Card>();
-        for(int i = 0; i < ranks.length; i++){
-            for(int j = 0; j < suits.length; j++) {
+        for (int i = 0; i < ranks.length; i++) {
+            for (int j = 0; j < suits.length; j++) {
                 cards.add(new Card(ranks[i], suits[j]));
             }
         }
-        for(int i = 0; i < extra.length; i++){
+        for (int i = 0; i < extra.length; i++) {
             cards.add(new Card(extra[i], "Blank"));
         }
         size = ranks.length * suits.length + extra.length;
@@ -38,16 +38,18 @@ public class Deck {
 
     /**
      * Determines if this deck is empty (no undealt cards).
+     *
      * @return true if this deck is empty, false otherwise.
      */
     public boolean isEmpty() {
-        if(size == 0)
+        if (size == 0)
             return false;
         return true;
     }
 
     /**
      * Accesses the number of undealt cards in this deck.
+     *
      * @return the number of undealt cards in this deck.
      */
     public int size() {
@@ -58,24 +60,25 @@ public class Deck {
      * Randomly permute the given collection of cards
      * and reset the size to represent the entire deck.
      */
- public void shuffle() {
-  for(int k = cards.size() - 1; k > 0 ; k--){
-   int random = (int) (Math.random() * (k + 1));
-   swap(k, random);
-  }
- }
+    public void shuffle() {
+        for (int k = cards.size() - 1; k > 0; k--) {
+            int random = (int) (Math.random() * (k + 1));
+            swap(k, random);
+        }
+    }
 
- public void swap(int first, int second){
-  Card temp = cards.get(first);
-  cards.set(first, cards.get(second));
-  cards.set(second, temp);
+    public void swap(int first, int second) {
+        Card temp = cards.get(first);
+        cards.set(first, cards.get(second));
+        cards.set(second, temp);
 
- }
+    }
 
     /**
      * Deals a card from this deck.
+     *
      * @return the card just dealt, or null if all the cards have been
-     *         previously dealt.
+     * previously dealt.
      */
     public Card deal() {
         size = size - 1;
@@ -84,6 +87,7 @@ public class Deck {
 
     /**
      * Generates and returns a string representation of this deck.
+     *
      * @return a string representation of this deck.
      */
     @Override
@@ -116,7 +120,8 @@ public class Deck {
         rtn = rtn + "\n";
         return rtn;
     }
-    public void add(Card c){
+
+    public void add(Card c) {
         cards.add(c);
     }
 }
